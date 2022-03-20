@@ -1,0 +1,22 @@
+   body {
+
+    background-color: rgb(86, 112, 126);
+ }
+
+ .body-text-color {
+    font-size: 40px; color: rgb(64, 110, 95);
+ }    
+
+ .hide {
+     
+    display: none;
+
+ }
+
+ .start-button {
+
+    background-color: blueviolet ;
+    color: aliceblue;
+    border-radius: 23px;
+    
+ }
