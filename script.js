@@ -16,28 +16,32 @@ var questions = [
         answerA: 'Answer A',
         answerB: 'Answer B',
         answerC: 'Answer C',
-        answerD: 'Answer D'
+        answerD: 'Answer D',
+        correctAnswer: 'Answer A',
     },
     {
         question: 'Question 2',
         answerA: 'Answer A',
         answerB: 'Answer B',
         answerC: 'Answer C',
-        answerD: 'Answer D'
+        answerD: 'Answer D',
+        correctAnswer: 'Answer D'
     },
     {
         question: 'Question 3',
         answerA: 'Answer A',
         answerB: 'Answer B',
         answerC: 'Answer C',
-        answerD: 'Answer D'
+        answerD: 'Answer D',
+        correctAnswer: 'Answer C'
     },
     {
         question: 'Question 4',
         answerA: 'Answer A',
         answerB: 'Answer B',
         answerC: 'Answer C',
-        answerD: 'Answer D'
+        answerD: 'Answer D',
+        correctAnswer: 'Answer B'
     },
 ];
 startButton.addEventListener("click", startQuiz);
@@ -71,6 +75,8 @@ function askNextQuestion() {
 answerAEl.addEventListener("click", function (event) {
     event.preventDefault();
     console.log("Answer A has been clicked.");
+    console.log('This is the corfrect answer', questions[questionIndex].correctAnswer)
+    console.log(event.target.innerHTML);
     questionIndex++;
     askNextQuestion();
 });
@@ -93,7 +99,7 @@ answerDEl.addEventListener("click", function (event) {
     askNextQuestion();
 });
 
-var timeRemaining = 6;
+var timeRemaining = 60;
 
 function startTimer() {
     var timerInterval = setInterval(function () {
