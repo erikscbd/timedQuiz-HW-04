@@ -45,13 +45,17 @@ function startQuiz() {
 
     console.log("click");
     screenSection.classList.add("hide");
+
     quizSection.classList.remove("hide");
+    document.getElementById("timeRemaining").textContent = timeRemaining;
     startTimer();
     askNextQuestion();
 }
 function endGame() {
 
     alert("Game is over!");
+    quizSection.classList.add("hide");
+    endGameEl.classList.remove("hide");
 }
 function askNextQuestion() {
     if (questionIndex >= questions.length) {
@@ -89,12 +93,12 @@ answerDEl.addEventListener("click", function (event) {
     askNextQuestion();
 });
 
-var timeRemaining = 60;
+var timeRemaining = 6;
 
 function startTimer() {
     var timerInterval = setInterval(function () {
         timeRemaining--;
-        if (timeRemaining <= 0) {
+        if (timeRemaining < 0) {
             clearInterval(timerInterval);
             endGame();
         }
