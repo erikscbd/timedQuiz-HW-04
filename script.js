@@ -42,14 +42,15 @@ var questions = [
 ];
 startButton.addEventListener("click", startQuiz);
 function startQuiz() {
-    
+
     console.log("click");
-    screenSection.classList.toggle("hide");
-    quizSection.classList.toggle("hide");
+    screenSection.classList.add("hide");
+    quizSection.classList.remove("hide");
+    startTimer();
+    askNextQuestion();
 }
 function endGame() {
 
-    
     alert("Game is over!");
 }
 function askNextQuestion() {
@@ -91,7 +92,7 @@ answerDEl.addEventListener("click", function (event) {
 var timeRemaining = 60;
 
 function startTimer() {
-    var timerInterval = setInterval(function(){
+    var timerInterval = setInterval(function () {
         timeRemaining--;
         if (timeRemaining <= 0) {
             clearInterval(timerInterval);
@@ -100,5 +101,5 @@ function startTimer() {
         document.getElementById("timeRemaining").textContent = timeRemaining;
     }, 1000);
 }
-askNextQuestion();
-startTimer();
+// askNextQuestion();
+// startTimer();
